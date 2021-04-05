@@ -1,0 +1,23 @@
+diff -Naur gcc-6.2.0/gcc/ada/gcc-interface/Makefile.in gcc-6.2.0-new/gcc/ada/gcc-interface/Makefile.in
+--- gcc-6.2.0/gcc/ada/gcc-interface/Makefile.in	2016-05-02 16:16:33.000000000 +0300
++++ gcc-6.2.0-new/gcc/ada/gcc-interface/Makefile.in	2016-11-01 13:30:13.851306333 +0200
+@@ -194,7 +194,7 @@
+ # Link flags used to build gnat tools.  By default we prefer to statically
+ # link with libgcc to avoid a dependency on shared libgcc (which is tricky
+ # to deal with as it may conflict with the libgcc provided by the system).
+-GCC_LINK_FLAGS=-static-libstdc++ -static-libgcc
++GCC_LINK_FLAGS=
+ 
+ # End of variables for you to override.
+ 
+--- a/configure	2019-04-15 10:32:09.000000000 +0000
++++ b/configure	2021-04-04 14:00:33.212540721 +0000
+@@ -5332,7 +5332,7 @@
+   cat >conftest.adb <<EOF
+ procedure conftest is begin null; end conftest;
+ EOF
+-acx_cv_cc_gcc_supports_ada=no
++acx_cv_cc_gcc_supports_ada=yes
+ # There is a bug in old released versions of GCC which causes the
+ # driver to exit successfully when the appropriate language module
+ # has not been installed.  This is fixed in 2.95.4, 3.0.2, and 3.1.
